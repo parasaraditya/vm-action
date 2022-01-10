@@ -22,7 +22,7 @@ jobs:
           inlineScript: |
             az deployment group create \
             --name StorageAccountDeployment \
-            --resource-group AdiGuthubCI \
+            --resource-group AdiGithubCI \
             --template-file armtemplate/storageaccount.json \
             --parameters storageAccountType=Standard_GRS
 
