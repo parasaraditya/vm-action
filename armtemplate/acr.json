@@ -11,6 +11,7 @@
     "parameters": {
       "acrName": {
         "type": "string",
+        "defaultValue": "AdiACRdemo",
         "metadata": {
           "description": "Name of the azure container registry (must be globally unique)"
         },
