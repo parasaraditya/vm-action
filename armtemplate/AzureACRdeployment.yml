@@ -25,3 +25,4 @@ jobs:
             --name ContainerRegistryDeployment \
             --resource-group AdiGithubCI \
             --template-file armtemplate/acr.json \
+            --parameters "acrName"="AdiACRdemo" \ 
