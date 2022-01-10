@@ -24,6 +24,6 @@ jobs:
             az deployment group create \
             --name ContainerRegistryDeployment \
             --resource-group AdiGithubCI \
-            --template-file armtemplates/acr.json \
-            --parameters-file acrparameters.json \
+            --template-file armtemplate/acr.json \
+            --parameters-file armtemplate/acrparameters.json \
           
