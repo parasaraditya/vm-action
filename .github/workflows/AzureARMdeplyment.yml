@@ -4,7 +4,7 @@ name: AzureARMdeployment
 
 jobs:
 
-    deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps: 
 
