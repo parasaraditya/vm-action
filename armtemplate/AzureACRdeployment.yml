@@ -25,5 +25,4 @@ jobs:
             --name ContainerRegistryDeployment \
             --resource-group AdiGithubCI \
             --template-file armtemplate/acr.json \
-            --parameters-file armtemplate/acrparameters.json \
-          
+            --parameters acrName=Adiacrdemo acrAdminUserEnabled=false \
