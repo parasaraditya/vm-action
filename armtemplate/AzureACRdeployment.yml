@@ -22,6 +22,8 @@ jobs:
       with:
        inlineScript: |
             az deployment group create \
-            --name ContainerREgistryDeployment \
+            --name ContainerRegistryDeployment \
             --resource-group AdiGithubCI \
             --template-file armtemplates/acr.json \
+            --parameters-file acrparameters.json \
+          
