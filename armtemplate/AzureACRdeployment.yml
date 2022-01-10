@@ -18,11 +18,8 @@ jobs:
 
     
     - name: Deploy ARM Template
-      uses: azure/CLI@v1
+      uses: azure/arm-deploy@v1
       with:
-       inlineScript: |
-            az deployment group create \
-            --name ContainerRegistryDeployment \
-            --resource-group AdiGithubCI \
-            --template-file armtemplate/acr.json \
-            --parameters "acrName"="AdiACRdemo" \ 
+        resourceGroupName: AdiGithubCI
+        template: armtemplate/acr.json
+        parameters: armtemplate/acrparameters.json
