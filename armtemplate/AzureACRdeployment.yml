@@ -22,4 +22,4 @@ jobs:
       with:
         resourceGroupName: AdiGithubCI
         template: armtemplate/acr.json
-        parameters: armtemplate/acrparameters.json
+        parameters: armtemplate/acrparameters.json acrName=AdiACRdemo acrAdminUserEnabled=false
