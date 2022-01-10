@@ -1,6 +1,6 @@
 on: [push]
 
-name: AzureACRdeployment
+name: AzureAKSdeployment
 
 jobs:
 
@@ -21,5 +21,4 @@ jobs:
       uses: azure/arm-deploy@v1
       with:
         resourceGroupName: AdiGithubCI
-        template: armtemplate/acr.json
-        input parameters: armtemplate/acrparameters.json acrName=AdiACRdemo acrAdminUserEnabled=false
+        template: armtemplate/aks.json
