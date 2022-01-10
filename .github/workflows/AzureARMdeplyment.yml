@@ -23,6 +23,6 @@ jobs:
             az deployment group create \
             --name StorageAccountDeployment \
             --resource-group AdiGuthubCI \
-            --template-file armtemplates/storageaccount.json \
+            --template-file vm-action/armtemplates/storageaccount.json \
             --parameters storageAccountType=Standard_GRS
 
