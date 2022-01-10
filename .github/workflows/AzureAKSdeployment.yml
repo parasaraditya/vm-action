@@ -1,24 +1,26 @@
 on: [push]
 
-name: AzureAKSdeployment
+name: AzureAKSDeployment
 
 jobs:
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps: 
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
 
-     - name: login to azure 
-       uses: azure/login@v1
-       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }} 
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: checkout sourcecode
-      using: actions/checkout@v2
+      - name: Checkout source code
+        uses: actions/checkout@v2
 
-    
-    - name: Deploy ARM Template
-      uses: azure/arm-deploy@v1
-      with:
-        resourceGroupName: AdiGithubCI
-        template: armtemplate/aks.json
+      - name: Deploy ARM Template
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az deployment group create \
+            --name AKSDeployment \
+            --resource-group AdiGithubCI \
+            --template-file armtemplate/aks.json \
