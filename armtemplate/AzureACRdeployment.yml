@@ -1,0 +1,27 @@
+on: [push]
+
+name: AzureACRdeployment
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps: 
+
+     - name: login to azure 
+       uses: azure/login@v1
+       with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }} 
+
+    - name: checkout sourcecode
+      using: actions/checkout@v2
+
+    
+    - name: Deploy ARM Template
+      uses: azure/CLI@v1
+      with:
+       inlineScript: |
+            az deployment group create \
+            --name ContainerREgistryDeployment \
+            --resource-group AdiGithubCI \
+            --template-file armtemplates/acr.json \
